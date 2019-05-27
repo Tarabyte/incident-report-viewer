@@ -1,0 +1,14 @@
+.app {
+  max-width: 1600px;
+}
+
+.app-header {
+  position: sticky;
+  height: 100px;
+  top: 0;
+  z-index: 9;
+}
+
+.app-main {
+  overflow: auto;
+}

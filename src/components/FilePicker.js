@@ -5,8 +5,8 @@ import './FilePicker.css'
 
 const FilePicker = ({ onFile }) => {
   const onDrop = useCallback(
-    files => {
-      ;[...files].forEach(file => {
+    files =>
+      [...files].forEach(file => {
         const reader = new FileReader()
 
         reader.addEventListener('load', e => {
@@ -17,8 +17,7 @@ const FilePicker = ({ onFile }) => {
         })
 
         reader.readAsText(file)
-      })
-    },
+      }),
     [onFile],
   )
 
@@ -27,7 +26,10 @@ const FilePicker = ({ onFile }) => {
   return (
     <div {...getRootProps({ className: 'filepicker' })}>
       <input {...getInputProps()} />
-      <p>Перетащите несколько один или несколько XML файлов с отчетами</p>
+      <p>
+        Перетащите один или несколько XML файлов с отчетами или нажмите, чтобы
+        выбрать.
+      </p>
     </div>
   )
 }
